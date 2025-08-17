@@ -510,6 +510,7 @@ for _,t in ipairs( tests ) do
       fh:write( "# [ERROR] test function '", t.name, "' died:\n# ",
                 msg:gsub( "\n", "\n# " ), "\n" )
     else
+      msg = tostring(msg) -- msg may be an object
       fh:write( "[ERROR] test function '", t.name, "' died:\n ",
                 msg:gsub( "\n", "\n " ), "\n" )
     end
